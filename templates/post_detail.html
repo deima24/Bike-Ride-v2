@@ -2,28 +2,28 @@
 
 {% block content %}
 
-{% load crispy_forms_tags %}
+
 
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-12 post-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ post.title }}</h1>
+                <h1 class="post-title">{{ entry.title }}</h1>
             </div>
             <!-- Delete Post -->
-            {% if post.author == request.user%}
+            {% if entry.author == request.user%}
             <div class="row-md-3">
                 <div class="col-md-3 float-right ">
                     <span>
-                        <a href="{% url 'post_delete' post.pk %}" class="delete large-icon"
+                        <a href="#" class="delete large-icon"
                             aria-label="Click to delete post">
                             <i class="far fa-trash-alt fa-2x"></i>
                         </a>
                     </span>
                     <!-- Edit Post -->
                     <span>
-                        <a href="{% url 'post_edit' post.pk %}" class="edit large-icon" aria-label="Click to edit idea">
+                        <a href="#" class="edit large-icon" aria-label="Click to edit idea">
                             <i class="far fa-edit fa-2x"></i>
                         </a>
                     </span>
@@ -37,13 +37,13 @@
             {% if "placeholder" in post.featured_image.url %}
             <img class="post-img" src="https://res.cloudinary.com/dmecv9zwa/image/upload/v1680130673/x6ayc6fvpikajmenqnyv.jpg" alt="post-img">
             {% else %}
-            <img class="post-img" src=" {{ post.featured_image.url }}" alt="post-img">
+            <img class="post-img" src=" {{ entry.featured_image.url }}" alt="post-img">
             {% endif %}
         </div>
             
         <div class="post-text">
             <!-- Post author goes after the post image -->
-            <h5 class="post-subtitle">{{ post.author }} | {{ post.created_on }}</h5>
+            <h5 class="post-subtitle">{{ entry.author }} | {{ entry.created_on }}</h5>
         </div>
              
     </div>
@@ -54,34 +54,23 @@
             <div>
                 <!-- post content goes after the author-->
                 <p class="card-text">
-                    {{ post.content | safe }}
+                    {{ entry.content | safe }}
                 </p>
-                <div class="row">
-
-                    <div class="col-1">
-                        
-                        {% if user.is_authenticated %}
-                        <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                            {% csrf_token %}
-                            {% if liked %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
-                            {% else %}
-                            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
-                            {% endif %}
-                        </form>
-                        {% else %}
-                        <span class="text-secondary"><i class="far fa-heart"></i></span>
-                        {% endif %}
-                        <span class="text-secondary">{{ post.number_of_likes }}</span>
-                    </div>
-                    
-                </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <hr>
+            <p>
+                {{ entry.start }}
+            </p>
+            <p>
+                {{ entry.finish }}
+            </p>
+            <p>
+                {{ entry.distance }}
+            </p>
         </div>
     </div>
     <div class="row">
@@ -121,7 +110,7 @@
                 <p class="card-text">Logged as: {{ user.username }}</p>
                 <!-- Comment form -->
                 <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
+                    {{ comment_form  }} <!-- | crispy -->
                     {% csrf_token %}
                     <button type="submit" class="btn button btn-signup btn-lg post_btn">Submit</button>
                 </form>

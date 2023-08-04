@@ -7,23 +7,22 @@
       <div class="col-md-12 mt-3 left">
         <div class="row">
 
-          {% for post in post_list %}
+          {% for entry in entry_list %}
           
           <div class="col-md-4">
             <div class="card mb-4">
               <div class="card-body">
                 <!-- post image -->
-                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="">
-                <a href="{% url 'post_detail' post.slug  %}">
+                <img class="card-img-top" src=" {{ entry.featured_image.url }}" alt="">
+                <a href="{% url 'entry_detail' entry.slug  %}">
                   <!-- post title -->
-                  <h2 class="card-title posttitle">{{ post.title }}</h2>
+                  <h2 class="card-title posttitle">{{ entry.title }}</h2>
                 </a>
                 <!-- post author and when it was posted -->
-                <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                <p class="card-text text-muted h6">{{ entry.author }} | {{ entry.created_on}} </p>
                 <!-- beggining of the post so reader can read some text before enterint the post -->
-                <p class="card-text">{{ post.content|slice:":100" }}</p>
-                <!-- number of like the post has -->
-                <p class="btn-like"><i class="far fa-heart"></i>{{ post.number_of_likes }}</p>
+                <p class="card-text">{{ entry.content|slice:":100" }}</p>
+                
                 
               </div>
             </div>
