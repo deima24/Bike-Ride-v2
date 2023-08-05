@@ -41,5 +41,35 @@ a {
     text-decoration: none;
 }
 
+/* log in, register */
+
+.button:hover {
+    background:#7FFF00;
+    border-radius: 1em;
+}
+
+.button {
+    outline: 3px solid blue;
+    border-radius: 1em;
+}
+
+
+.login,
+.login_text,
+.signup,
+.signup_text,
+.logout_text {
+    color: #F5DEB3;
+}
+
+.login_text {
+    font-size: 1.2rem;
+}
+
+.login_top,
+.signup_top,
+.logout_top {
+    color: #7FFF00;
+}
 
 
