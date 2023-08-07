@@ -12,7 +12,8 @@ class EntryAdmin(SummernoteModelAdmin):
         'status',
         'created_on',
         'distance',
-        'status'
+        'status',
+        'difficulty'
     )
 
     search_fields = (
