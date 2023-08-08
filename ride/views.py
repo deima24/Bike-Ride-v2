@@ -1,7 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Entry, Rating
-from .forms import CommentForm
+from .forms import CommentForm, EntryForm
+from django.views.generic import (
+    CreateView,
+    DetailView,
+    ListView,
+    DeleteView,
+    UpdateView,
+)
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 class EntryList(generic.ListView):
@@ -70,3 +78,23 @@ class EntryDetail(View):
                 "rating": rating
             },
         )
+
+
+class EntryEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    """A view to edit an idea"""
+
+    Model = Entry
+    form_class = EntryForm
+    success_url = "/entry/"
+    template_name = "entry_edit.html"
+    queryset = Entry.objects
+
+    def form_valid(self, form):
+        """If form is valid return to browse ideas"""
+        self.success_url + str(self.object.pk) + "/"
+        messages.success(self.request, "Post updated successfully")
+        return super().form_valid(form)
+
+    def test_func(self):
+        """A function to test if the user is the author"""
+        return self.request.user == self.get_object().author
