@@ -9,7 +9,7 @@
         <div class="row g-0">
             <div class="col-md-12 post-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ entry.title }}</h1>
+                <h1 class="post-title white">{{ entry.title }}</h1>
             </div>
             <!-- Delete Post -->
             {% if entry.author == request.user%}
@@ -43,7 +43,7 @@
             
         <div class="post-text">
             <!-- Post author goes after the post image -->
-            <h5 class="post-subtitle">{{ entry.author }} | {{ entry.created_on }}</h5>
+            <h5 class="post-subtitle white">{{ entry.author }} | {{ entry.created_on }}</h5>
         </div>
              
     </div>
@@ -63,26 +63,26 @@
         <div class="col card">
             
             <p>
-                START: 
+                <b>START:</b> 
                 {{ entry.start }}
             </p>
             
             <p>
-                FINISH:
+                <b>FINISH:</b>
                 {{ entry.finish }}
             </p>
             
             <p>
-                DISTANCE: 
+                <b>DISTANCE:</b> 
                 {{ entry.distance }}
                 KM.
             </p>
             <p>
-                DIFFICULTY: 
+                <b>DIFFICULTY:</b> 
                 {{ entry.difficulty }}
             </p>
             <p>
-                AVERAGE: 
+                <b>AVERAGE:</b> 
                 {{ entry.average_rating|floatformat:1 }}
             </p>
         </div>
@@ -111,7 +111,7 @@
         
     </div>
     <div class="row">
-        <div class="col-md-12 card mb-4  mt-3 post-body">
+        <div class="col-md-12 card mb-4  mt-3 post-body leave-coment">
             <div class="card-body">
                 <!-- gives you an elert that the post is waiting for to de approved  -->
                 {% if commented %}

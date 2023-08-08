@@ -73,3 +73,32 @@ a {
 }
 
 
+/* star rating */ 
+
+.fa-solid {
+    color: #ffff00;
+}
+
+.form-check-input {
+    background-color: #000000;
+}
+
+/* entry page */ 
+
+.white {
+    color: #FFFFFF;
+}
+
+.leave-coment {
+    background-color: #E1D9D1;
+}
+
+/* for more posts btn */
+
+.button-more {
+    border-radius: 12px;
+}
+
+.button-more:hover {
+    background: #87CEFA;
+}
