@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Entry, Rating
 from .forms import CommentForm, EntryForm
+from django.contrib import messages
 from django.views.generic import (
     CreateView,
     DetailView,
@@ -97,4 +98,15 @@ class EntryEdit(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     def test_func(self):
         """A function to test if the user is the author"""
+        return self.request.user == self.get_object().author
+
+
+class EntryDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """A view to delete an post"""
+
+    model = Entry
+    success_url = "/entry/"
+    template_name = "delete_entry.html"
+
+    def test_func(self):
         return self.request.user == self.get_object().author

@@ -20,7 +20,10 @@
                 </a>
                 <!-- post author and when it was posted -->
                 <p class="card-text text-muted h6">{{ entry.author }} | {{ entry.created_on}} </p>
+                <!-- difficulty of ride -->
                 <P class="card-text">Difficulty: {{ entry.difficulty }}</P>
+                <!-- distance of the ride -->
+                <P class="card-text">Distance: {{ entry.distance }} KM</P>
                 <!-- beggining of the post so reader can read some text before enterint the post -->
                 <p class="card-text">{{ entry.content|slice:":100" }}</p>
                 

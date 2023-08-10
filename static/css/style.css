@@ -102,3 +102,9 @@ a {
 .button-more:hover {
     background: #87CEFA;
 }
+
+.post_btn,
+.edit-btn,
+.create_btn {
+    margin-top: 1cm;
+}

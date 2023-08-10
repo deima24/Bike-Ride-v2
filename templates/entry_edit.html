@@ -3,10 +3,10 @@
 
 {% block content %}
 <div class="container">
-    <div class="edit_post_form">
+    <div class="edit_post_form white">
         <!-- Edit post form heading and information -->
         <h1>Edit your Post</h1>
-        <p>If you have any updates to your existing post please update it here.</p>
+        <p>If you have any updates to your existing post please update it here:</p>
         <!-- Edit post form-->
         <form  action="{% url 'entry_edit' entry.id %}" method="POST" enctype="multipart/form-data">
 
