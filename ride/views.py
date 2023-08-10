@@ -3,6 +3,7 @@ from django.views import generic, View
 from .models import Entry, Rating
 from .forms import CommentForm, EntryForm
 from django.contrib import messages
+from django.template.defaultfilters import slugify
 from django.views.generic import (
     CreateView,
     DetailView,
@@ -110,3 +111,19 @@ class EntryDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
     def test_func(self):
         return self.request.user == self.get_object().author
+
+
+class CreateEntry(CreateView):
+    """A view to create an post"""
+
+    form_class = EntryForm
+    template_name = "create_entry.html"
+    success_url = "/entry/"
+    model = Entry
+
+    def form_valid(self, form):
+        """If form is valid return to browse pots"""
+        form.instance.author = self.request.user
+        form.instance.slug = slugify(form.instance.title)
+        messages.success(self.request, "Post created successfully")
+        return super(CreateEntry, self).form_valid(form)
