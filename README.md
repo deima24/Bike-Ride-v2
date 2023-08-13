@@ -107,3 +107,29 @@ The delete button will take the user to a confirmation page asking them to confi
 ![delete](media/delete-post.png)
 
 
+## Future Features
+
+Edit comment: the access for the user to edit and delete their comment.
+
+Email verifiation: make email signup mandatory and verifying the user.
+
+Social sign in: use Google or othern forms of social sign in features.
+
+
+## Database
+
+The data was designed to give the user CRUD functionality once signed in. Posts are connected to the author by foreign key which allows author to edit and delete pots connected to their account.
+
+
+## Technologies
+
+HTML
+    The structure of the site was made using HTML
+CSS
+    The website was styled using CSS in an external stylesheet
+Python
+    Python was the main programming language used within the django app
+Github
+    Source code was hosted in Github
+javascript
+    I used a very small amount of javascript to make the messages disappear
