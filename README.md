@@ -139,6 +139,8 @@ javascript
 
 ## Code Validation
 
+### HTML
+
 The HTML files were validated with the W3C Validator Service.
 
 
@@ -218,3 +220,35 @@ Testing was taken out to ensure a user could log out of the website.
 Outcome: User is taken back to the homepage with the Create post option hidden and the Register option showing.
 
 ![logout-page](media/logout-pass.png)
+
+
+### CSS 
+
+The CSS file was validated using the W3C Jigsaw Validator Service. It passed the validation process without warnings or errors.
+
+![css-check](media/css-check-pass.png)
+
+
+### Python pep8
+
+
+The Python files were validated using the Pep8 linter
+
+admin.py - PASS
+
+![admin-pass](media/admin-pass.png)
+
+
+forms.py - PASS
+
+![forms-pass](media/forms-pass.png)
+
+
+models.py - PASS
+
+![models-pass](media/models-pass.png)
+
+
+views.py - PASS
+
+![views-pass](media/views-pass.png)

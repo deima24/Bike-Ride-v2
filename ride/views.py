@@ -16,21 +16,19 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 class EntryList(generic.ListView):
     model = Entry
-    queryset = Entry.objects.filter(status=1).order_by('-created_on')
-    template_name = 'ride.html'
+    queryset = Entry.objects.filter(status=1).order_by("-created_on")
+    template_name = "ride.html"
     paginate_by = 3
 
 
 class EntryDetail(View):
-
     def get(self, request, slug, *args, **kwargs):
-
         queryset = Entry.objects.filter(status=1)
         entry = get_object_or_404(queryset, slug=slug)
-        comments = entry.comments.filter(approved=True).order_by('created_on')
+        comments = entry.comments.filter(approved=True).order_by("created_on")
         rating = entry.average_rating
 
-        return render (
+        return render(
             request,
             "post_detail.html",
             {
@@ -38,16 +36,14 @@ class EntryDetail(View):
                 "comments": comments,
                 "commented": False,
                 "comment_form": CommentForm(),
-                "rating": rating
+                "rating": rating,
             },
         )
 
-
     def post(self, request, slug, *args, **kwargs):
-
         queryset = Entry.objects.filter(status=1)
         entry = get_object_or_404(queryset, slug=slug)
-        comments = entry.comments.filter(approved=True).order_by('created_on')
+        comments = entry.comments.filter(approved=True).order_by("created_on")
         rating = entry.average_rating
 
         comment_form = CommentForm(data=request.POST)
@@ -67,9 +63,7 @@ class EntryDetail(View):
             )
         else:
             comment_form = CommentForm()
-
-
-        return render (
+        return render(
             request,
             "post_detail.html",
             {
@@ -77,7 +71,7 @@ class EntryDetail(View):
                 "comments": comments,
                 "commented": True,
                 "comment_form": CommentForm(),
-                "rating": rating
+                "rating": rating,
             },
         )
 
