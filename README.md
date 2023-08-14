@@ -133,3 +133,88 @@ Github
     Source code was hosted in Github
 javascript
     I used a very small amount of javascript to make the messages disappear
+
+
+# Testing
+
+## Code Validation
+
+The HTML files were validated with the W3C Validator Service.
+
+
+Home page - PASS
+
+![home-page](media/home-pass.png)
+
+
+Blog page - PASS
+
+![blog-page](media/blog-page.png)
+
+Post Detail - PASS
+
+![blog-page](media/post-pass.png)
+
+Sign Up - PASS
+
+![signup-page](media/signup-pass.png)
+
+Log In - PASS
+
+Testing was taken out to ensure a user could login to the website.
+    Enter User Name and Password
+    Click Sign Up
+
+Outcome: User is redirected to the home page. The Navbar changed to show the create a post option and log out option.
+
+![login-page](media/login-pass.png)
+
+Create Post - PASS
+
+Testing was taken out to ensure the user could create a new post.
+When the user is logged in.
+    Navigate to create a post page
+    Complete form
+    Click Submit
+
+Outcome if all fields are filled in correctly the user will be redirected to the Ride Blog page. Page owner have to approve the post to be posted.
+
+![create-post](media/createpost-pass.png)
+
+Delete Post - PASS
+
+Tested to ensure a user could delete their post.
+
+When the user is logged in
+    Click on the post name
+    If the user is the Author of the post, they will see a delete button and an Edit button under the Post Name
+    Click the delete button
+    User is taken to a Delete confirmation page asking them if their wish to delete that post showing the post name.
+    Click Submit
+
+Outcome: The user will be redirected back to the Ride Blog page and the post along with the comments will be deleted.
+
+![delete-page](media/deletepost-pass.png)
+
+Edit Post - PASS
+
+Tested to ensure the user could edit their post.
+When the user is logged in
+    If the user is the Author of the post, they will see a delete button and an Edit button under the post Name
+    Click the edit button
+    Update the fields you wish to update
+    Click Submit
+
+Outcome: The user will be redirected back to the Ride Blog page which will show the new information, and a message appears to say they have succesfully updated their post.
+
+![edit-page](media/edit-pass.png)
+
+Log Out - PASS
+
+Testing was taken out to ensure a user could log out of the website.
+    Navigate to Log Out page
+    Click Confirm button
+
+Outcome: User is taken back to the homepage with the Create post option hidden and the Register option showing.
+
+![logout-page](media/logout-pass.png)
