@@ -334,3 +334,8 @@ To deploy my site to Heroku I followed the following steps
 - My mentor
 - The wonderful slack community
 - My girlfriend for putting up with my stress
+
+
+## Bugs
+
+- Deployment didn't work at first due to collectstatic error and crispy forms error

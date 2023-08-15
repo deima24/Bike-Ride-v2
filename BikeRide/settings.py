@@ -28,9 +28,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['8000-deima24-bikeridev2-xnhab9dqmnv.ws-eu103.gitpod.io']
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+ALLOWED_HOSTS = ['8000-deima24-bikeridev2-xnhab9dqmnv.ws-eu103.gitpod.io', 'localhost', 'bike-ride-v2-56babcb93118.herokuapp.com']
 
 
 # Application definition
