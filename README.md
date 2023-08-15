@@ -252,3 +252,53 @@ models.py - PASS
 views.py - PASS
 
 ![views-pass](media/views-pass.png)
+
+
+## Manual Testing
+
+### Registration
+
+A username is required
+    If the cell is empty an error message is shown.
+
+A password is required	
+    An error message is shown if the password is invalid or missing.
+
+Sign up button
+    The signup button validates the form and the user is able to log in afterwards.
+
+### Login/Logout
+
+Login
+    Previous registration is required for the user to be able to log in. The log in fields are obligatory. When a user is logged in, they should have access to the commenting, rating, and creating post.
+
+Logout
+    Logout option is only available for logged in users. Upon clicking the logout button, user should not have access to the previously available features and they should be able to navigate to the login form again. When clicking on the log out user will be asked if it confirmation if it want's to log out.
+
+### Post management
+
+Post creation
+    The user should be logged in to create a post. Once that feature is available in the naviagion bar, they should be directed to a form which can be saved after filling in the required fields. Admin authorization needed.
+
+Post modification
+    The user should be logged in and be the author of the post to be able to modify it.
+
+Post deletion
+    The user should be logged in and be the author of the post to be able to delete it.
+
+
+### Commenting/Rating
+
+See comments
+    Any user should be able to see the comments under a post.
+
+Commenting
+    The user should be able to comment under a post if they are logged in. The admin has to approve the comment before it is visible on the page.
+
+See ratings
+    Any user should be able to see the ratings on the post.
+
+Rating
+    Logged in users should be able to choose from the different levels of rating.
+
+
