@@ -278,27 +278,59 @@ Logout
 ### Post management
 
 Post creation
-    The user should be logged in to create a post. Once that feature is available in the naviagion bar, they should be directed to a form which can be saved after filling in the required fields. Admin authorization needed.
+    - The user should be logged in to create a post. Once that feature is available in the naviagion bar, they should be directed to a form which can be saved after filling in the required fields. Admin authorization needed.
 
 Post modification
-    The user should be logged in and be the author of the post to be able to modify it.
+    - The user should be logged in and be the author of the post to be able to modify it.
 
 Post deletion
-    The user should be logged in and be the author of the post to be able to delete it.
+    - The user should be logged in and be the author of the post to be able to delete it.
 
 
 ### Commenting/Rating
 
 See comments
-    Any user should be able to see the comments under a post.
+    - Any user should be able to see the comments under a post.
 
 Commenting
-    The user should be able to comment under a post if they are logged in. The admin has to approve the comment before it is visible on the page.
+    - The user should be able to comment under a post if they are logged in. The admin has to approve the comment before it is visible on the page.
 
 See ratings
-    Any user should be able to see the ratings on the post.
+    - Any user should be able to see the ratings on the post.
 
 Rating
-    Logged in users should be able to choose from the different levels of rating.
+    - Logged in users should be able to choose from the different levels of rating.
 
 
+
+## Deployment
+
+To deploy my site to Heroku I followed the following steps
+
+- Navigate to heroku and create/log into account
+- Click the new button in the top right corner
+- Select create new app
+- Enter app name
+- Select region and click create app (europe)
+- Click the resources tab and search for Heroku Postgres
+- Go to the settings tab and then click reveal config vars
+- Add config vars
+- Click the deploy tab
+- Scroll down to Connect to GitHub and sign in / authorize when prompted
+- In the search box, find the repository you want to deploy and click connect
+- Scroll down to Manual deploy and choose the main branch
+- Click Deploy
+
+
+## References
+
+- I also followed the Code Institute Blog walkthrough to start my project off.
+- I used the django documentation
+- I used the summernote documentation
+- I used the bootstrap documentation
+
+## Acknowledgements
+
+- My mentor
+- The wonderful slack community
+- My girlfriend for putting up with my stress
