@@ -32,7 +32,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['localhost', 'bike-ride-v2.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'bike-ride-v2.herokuapp.com', 'https://8001-deima24-bike-ride-v2-j7w96yojyj.us2.codeanyapp.com']
 
 
 # Application definition
@@ -83,6 +83,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware'
 ]
 
 ROOT_URLCONF = 'BikeRide.urls'
