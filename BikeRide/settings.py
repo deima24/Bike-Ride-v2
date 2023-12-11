@@ -32,7 +32,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['8000-deima24-bikeridev2-xnhab9dqmnv.ws-eu103.gitpod.io', 'localhost', 'bike-ride-v2-56babcb93118.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'https://bike-ride-v2-fc24e1fc3426.herokuapp.com']
 
 
 # Application definition
